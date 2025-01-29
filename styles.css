@@ -1,0 +1,148 @@
+*,
+h1 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4vh;
+  background-color: rgb(36, 36, 46);
+  color: white;
+  text-align: center;
+  font-family: "Atma";
+  user-select: none;
+}
+
+h1 {
+  font-size: 5rem;
+}
+@media screen and (max-width: 573px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+header p {
+  animation: blinking 1.5s infinite;
+  font-style: italic;
+}
+.color-change {
+  background: none;
+  color: red;
+  animation: colors 5s infinite;
+}
+
+#colors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: clamp(320px, 50%, 600px);
+  aspect-ratio: 1/1;
+  gap: 3%;
+}
+.color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.06s;
+  cursor: pointer;
+}
+.color:active {
+  transform: scale(0.9);
+}
+.red {
+  border-top-left-radius: 50%;
+  background-color: red;
+}
+.red .flash {
+  border-top-left-radius: 50%;
+}
+.green {
+  border-top-right-radius: 50%;
+  background-color: green;
+}
+.green .flash {
+  border-top-right-radius: 50%;
+}
+.blue {
+  border-bottom-left-radius: 50%;
+  background-color: blue;
+}
+.blue .flash {
+  border-bottom-left-radius: 50%;
+}
+.yellow {
+  border-bottom-right-radius: 50%;
+  background-color: yellow;
+}
+.yellow .flash {
+  border-bottom-right-radius: 50%;
+}
+.flash {
+  width: 85%;
+  height: 85%;
+  background-color: rgba(255, 255, 255, 0.753);
+  box-shadow: 0 0 10px 5px white;
+  opacity: 0;
+}
+.show {
+  animation: show 0.5s;
+}
+.hide {
+  opacity: 0;
+}
+.red-text {
+  color: red;
+  background: none;
+}
+
+body > p {
+  font-family: "Gloria Hallelujah";
+  user-select: text;
+}
+
+@keyframes show {
+  0% {
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+  }
+}
+@keyframes blinking {
+  0% {
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+  }
+}
+@keyframes colors {
+  0% {
+  }
+  25% {
+    color: green;
+  }
+  50% {
+    color: blue;
+  }
+  75% {
+    color: yellow;
+  }
+  100% {
+  }
+}
